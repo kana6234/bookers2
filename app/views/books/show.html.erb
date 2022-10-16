@@ -1,2 +1,19 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'users/user', user: @user %>
+
+<%= render 'books/new', book: @book %>
+
+<h2>Book detail</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <%= link_to user_path(@book_detail.user.id) do %>
+          <%= image_tag @book_detail.user.profile_image %>
+          <%= @book_detail.user.name %>
+        <% end %>
+      </td>
+      <td><%= link_to @book_detail.title, book_path(@book_detail.id) %></td>
+      <td><%= @book_detail.body %></td>
+    </tr>
+  </tbody>
+</table>
