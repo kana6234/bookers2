@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-  include Booknew
-  before_action :book_new
 
   def index
     @user = User.find(current_user.id)
