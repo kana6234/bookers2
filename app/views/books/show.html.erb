@@ -14,6 +14,7 @@
       </td>
       <td><%= link_to @book_detail.title, book_path(@book_detail.id) %></td>
       <td><%= @book_detail.body %></td>
+      <td><%= link_to "edit", edit_book_path(@book_detail.id)%></td>
     </tr>
   </tbody>
 </table>
