@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :book_new, {only:[:index,:show]}
+  add_flash_types :notice, :success
 
   def book_new
     @book = Book.new
@@ -11,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
+    flash[:notice] = "Signed out successfully."
     root_path
   end
 
