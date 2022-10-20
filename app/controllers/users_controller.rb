@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def is_matching_login_user
     if current_user.id != params[:id].to_i
-      redirect_to books_path
+      redirect_to user_path(current_user.id)
     end
   end
 end
